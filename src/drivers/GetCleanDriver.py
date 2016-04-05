@@ -2,6 +2,7 @@
 """Download and clean data from Bureau of Transportation Statistics.  Place files 
 in the data folder."""
 
+import os
 import sys
 
 from download.get_files import get_latlong, get_flights
@@ -9,6 +10,7 @@ from download.get_dist_from_files import getdistance
 from clean.cleandata import fix_schdata, adjust_schtime
 
 def main():
+    os.system('mkdir -p data')  #Create data folder to put flight data, if it doesn't exist.
     get_latlong()  #Get LatLong.csv
 
     for year in range(1987,2016):
