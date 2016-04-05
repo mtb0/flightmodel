@@ -177,7 +177,7 @@ def plot_regression_coef():
     [pacplane, pacjet, pacground, pacfit, usplane, usjet, usground, usfit, time] = [[] for i in range(9)]
     [pacflights, usflights, pac_error, us_error] = [0]*4
 
-    for year in range(2011, 2016):
+    for year in range(1987, 2016):
         if(year == 1987):
             startmonth = 10
         else:
