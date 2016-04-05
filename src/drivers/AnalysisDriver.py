@@ -4,6 +4,7 @@ For a given year and month, visualize dist vs sch time, run a regression,
 and look at error.  Filter based on whether the destination is in the Pacific, 
 and study the regression and error for each group."""
 
+import os
 import sys
 
 from analysis.filter import get_jetstream, get_pacific
@@ -13,6 +14,9 @@ from analysis.regression import regression
 def main():
     year = 2015
     month = 1
+
+    os.system('mkdir -p graphs')  #Create directory to place graphs, if it doesn't exist.
+
     plot_schtime(12478, 12892, 'AA') #Plot sch flight time from JFK to LAX
     plot_schtime(12892, 12478, 'AA') #Plot sch flight time from LAX to JFK
 
